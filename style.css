@@ -268,18 +268,16 @@ html { scroll-behavior: smooth; }
   margin-bottom: 6rem;
 }
 
-/* --- Custom Hamburger/X Toggle --- */
-
-/* Outer container for bars for easy animation */
 .navbar-toggler.custom-toggler {
   border: none;
   background: none;
-  padding: 0.375rem 0.75rem;
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
+  padding: 0.5rem 0.7rem;
+  position: relative;
+  z-index: 1051; /* Ensure it's above the offcanvas */
 }
 
-/* Hamburger bars container */
 .hamburger {
   display: inline-block;
   width: 32px;
@@ -288,32 +286,25 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
 }
 
-/* The bars */
 .hamburger span {
   display: block;
-  height: 3.5px; 
-  width: 100%;
-  background: var(--color-link); /* Use your accent color! */
-  border-radius: 2px;
   position: absolute;
   left: 0;
-  transition: 
-      0.32s cubic-bezier(.68,-0.6,.32,1.6),
-      background 0.2s;
-}
-.hamburger span:nth-child(1) {
-  top: 8px;
-}
-.hamburger span:nth-child(2) {
-  top: 15px;
-}
-.hamburger span:nth-child(3) {
-  top: 22px;
+  width: 100%;
+  height: 3.5px;
+  background: var(--color-link);
+  border-radius: 2px;
+  transition:
+    0.32s cubic-bezier(.68,-0.6,.32,1.6),
+    background 0.2s;
 }
 
-/* Active ("X") state: when menu is open */
+.hamburger span:nth-child(1) { top: 8px; }
+.hamburger span:nth-child(2) { top: 15px; }
+.hamburger span:nth-child(3) { top: 22px; }
+
 .navbar-toggler[aria-expanded="true"] .hamburger span {
-  background: var(--color-link-hover); /* e.g. gold accent for X */
+  background: var(--color-link-hover);
 }
 
 .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
@@ -327,3 +318,68 @@ html { scroll-behavior: smooth; }
   top: 15px;
   transform: rotate(-45deg);
 }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse { display: none !important; }
+  .offcanvas { display: block !important; }
+}
+@media (min-width: 992px) {
+  .offcanvas { display: none !important; }
+  .navbar-collapse { display: flex !important; }
+}
+
+/* Make the offcanvas background transparent and blurry */
+.offcanvas {
+  background: transparent; 
+}
+
+.offcanvas-header, .offcanvas-body {
+  color: var(--color-text); /* Ensures text is readable */
+}
+
+.offcanvas.offcanvas-end {
+  width: 100px !important; /* Choose your width */
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.offcanvas-body {
+  overflow-x: hidden;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+body.offcanvas-backdrop {
+  overflow-x: hidden;
+}
+
+/* Slide-in animation keyframes */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Initial state: links hidden and off to the right */
+.offcanvas:not(.show) .slide-link {
+  opacity: 0;
+  transform: translateX(32px);
+  pointer-events: none;
+}
+
+/* When the offcanvas is open, animate in */
+.offcanvas.show .slide-link {
+  opacity: 1;
+  animation: slideInRight 0.6s cubic-bezier(.77,0,.175,1) both;
+  pointer-events: auto;
+}
+
+/* Stagger the animation for each nav-item */
+.offcanvas.show .navbar-nav .nav-item:nth-child(1) .slide-link { animation-delay: 0.08s; }
+.offcanvas.show .navbar-nav .nav-item:nth-child(2) .slide-link { animation-delay: 0.22s; }
+.offcanvas.show .navbar-nav .nav-item:nth-child(3) .slide-link { animation-delay: 0.36s; }
