@@ -262,3 +262,7 @@ html { scroll-behavior: smooth; }
   color: var(--color-background);
   border-color: var(--color-link-hover);
 }
+
+.skills {
+  margin-top: 6rem;
+}
