@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+/* Fonts */
+@font-face {
+  font-family: century_supra_a;
+  src: url('fonts/CenturySupraT3.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: century_supra_a;
+  src: url('/fonts/century_supra_a_bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: concourse_4;
+  src: url('fonts/MetroOffice-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: concourse_4;
+  src: url('fonts/MetroOffice-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: concourse_4;
+  src: url('fonts/MetroOffice-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: concourse_4;
+  src: url('fonts/MetroOffice-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Colors */
+:root {
+  --color-text: #ece1d7;
+  --color-background: #292522;
+  --color-link: #a3a9ce;
+  --color-link-hover: #ebc06d;
+  --color-footer-background: #1d1c19;
+  --color-card-bg: #34302c;
+  --color-card-border: #403a36;
+  --color-muted: #c1a78e;
+}
+
+/* Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'century_supra_a', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+a { color: var(--color-link); text-decoration:none; }
+a:hover { color: var(--color-link-hover); text-decoration:underline; }
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+}
+.navbar .nav-link {
+  color: var(--color-text);
+  font-family: concourse_4, Georgia, serif;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+.navbar .navbar-brand {
+  color: var(--color-muted);
+  font-family: concourse_4, Georgia, serif;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+/* Hover state - highlight with color */
+.navbar .nav-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+
+/* Hero */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+}
+#hero h1 {
+  font-family: 'concourse_4', Georgia, serif;
+  font-weight: bold;
+  font-size: clamp(3rem, 8vw, 5rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+#hero p {
+  font-family: 'century_supra_a', Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--color-muted);
+  margin-bottom: 3rem;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position:absolute;
+  font-size: 2rem;
+  color: var(--color-link);
+  display: inline-block;
+  animation: bounce 2s infinite;
+  bottom: 8rem;
+}
+.scroll-down:hover { color: var(--color-link-hover); }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
+
+/* Sections */
+section { padding: 4rem 0; }
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'concourse_4', Georgia, serif;
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+
+/* Cards */
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  padding: 2rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.25); transform: translateY(-3px); }
+
+/* Footer */
+footer {
+  background-color: transparent;
+  color: var(--color-muted);
+  padding: 2rem 0;
+  text-align: center;
+}
+footer a { color: var(--color-link); }
+footer a:hover { color: var(--color-link-hover); }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+
+.col-lg-6 .timeline {
+  position: relative;
+  overflow: visible;
+}
+
+.timeline .events::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: var(--color-muted);
+}
+.timeline .events {
+  position: relative;
+  display: flex;
+  margin-block: 0.5em;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+
+.timeline .event {
+  display: flex;
+  align-items: baseline;
+}
+
+.timeline .event .marker {
+  position: relative;
+  left: -6px;
+  fill: var(--color-link-hover);
+}
+
+.content time {
+  font-family: concourse_4, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.timeline .event .content {
+  padding-left: 1.5rem; /* ensures text doesn’t overlap marker */
+  flex: 1;               /* take up remaining space */
+  min-width: 0;          /* prevent flex overflow */
+  padding: 0.75rem 1rem 0.5rem 1rem;                /* space inside the border */
+  border: 1px solid var(--color-card-border);  /* border color */
+  border-radius: 8px;           /* rounded corners for softer look */
+  background-color: var(--color-card-bg);  /* optional background */
+  position: relative;            /* keeps marker positioned correctly */
+}
+
+.timeline .event .content .header {
+  display: flex;
+  justify-content: space-between; /* employer left, time right */
+  font-family: concourse_4, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+
+.timeline .event .header .employer {
+  text-align: left;
+}
+
+.timeline .event .header .time {
+  text-align: right;
+}
+
+.timeline .event .content .text p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Hero buttons styling */
+.hero-buttons {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--color-link);
+  border-radius: 50%;       /* makes it circular */
+  color: var(--color-link);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background-color: var(--color-link);
+  color: var(--color-background);
+  border-color: var(--color-link-hover);
+}
