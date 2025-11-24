@@ -267,3 +267,63 @@ html { scroll-behavior: smooth; }
   margin-top: 6rem;
   margin-bottom: 6rem;
 }
+
+/* --- Custom Hamburger/X Toggle --- */
+
+/* Outer container for bars for easy animation */
+.navbar-toggler.custom-toggler {
+  border: none;
+  background: none;
+  padding: 0.375rem 0.75rem;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Hamburger bars container */
+.hamburger {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* The bars */
+.hamburger span {
+  display: block;
+  height: 3.5px; 
+  width: 100%;
+  background: var(--color-link); /* Use your accent color! */
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: 
+      0.32s cubic-bezier(.68,-0.6,.32,1.6),
+      background 0.2s;
+}
+.hamburger span:nth-child(1) {
+  top: 8px;
+}
+.hamburger span:nth-child(2) {
+  top: 15px;
+}
+.hamburger span:nth-child(3) {
+  top: 22px;
+}
+
+/* Active ("X") state: when menu is open */
+.navbar-toggler[aria-expanded="true"] .hamburger span {
+  background: var(--color-link-hover); /* e.g. gold accent for X */
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+  top: 15px;
+  transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+  top: 15px;
+  transform: rotate(-45deg);
+}
