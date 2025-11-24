@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: century_supra_a;
-  src: url('/fonts/century_supra_a_bold.woff2') format('woff2');
+  src: url('fonts/CenturySupraT3.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -265,4 +265,5 @@ html { scroll-behavior: smooth; }
 
 .skills {
   margin-top: 6rem;
+  margin-bottom: 6rem;
 }
