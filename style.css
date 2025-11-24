@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: century_supra_a;
-  src: url('fonts/CenturySupraT3.woff2') format('woff2');
+  src: url('fonts/CenturySupraT3-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -77,6 +77,7 @@ a:hover { color: var(--color-link-hover); text-decoration:underline; }
   font-family: concourse_4, Georgia, serif;
   font-weight: bold;
   letter-spacing: 0.02em;
+  font-size: 18px;
 }
 .navbar .navbar-brand {
   color: var(--color-muted);
@@ -97,7 +98,7 @@ a:hover { color: var(--color-link-hover); text-decoration:underline; }
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   padding: 0 2rem;
   position: relative;
@@ -264,7 +265,12 @@ html { scroll-behavior: smooth; }
 }
 
 .skills {
-  margin-top: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.education {
+  margin-top: 3rem;
   margin-bottom: 6rem;
 }
 
@@ -274,6 +280,11 @@ html { scroll-behavior: smooth; }
   outline: none;
   box-shadow: none;
   padding: 0.5rem 0.7rem;
+  position: relative;
+  z-index: 1051; /* Ensure it's above the offcanvas */
+}
+
+.navbar-brand.custom-brand {
   position: relative;
   z-index: 1051; /* Ensure it's above the offcanvas */
 }
