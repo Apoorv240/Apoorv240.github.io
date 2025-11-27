@@ -135,6 +135,12 @@ a:hover { color: var(--color-link-hover); text-decoration:underline; }
 
 /* Sections */
 section { padding: 4rem 0; }
+@media (max-width: 575.98px) {
+  #projects {
+    padding-top: 1rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+}
 h1,h2,h3,h4,h5,h6 {
   font-family: 'concourse_4', Georgia, serif;
   font-weight: bold;
@@ -195,7 +201,7 @@ html { scroll-behavior: smooth; }
   font-weight: bold;
 }
 
-.timeline .event .content {
+.content {
   padding-left: 1.5rem; /* ensures text doesn’t overlap marker */
   flex: 1;               /* take up remaining space */
   min-width: 0;          /* prevent flex overflow */
@@ -206,12 +212,12 @@ html { scroll-behavior: smooth; }
   position: relative;            /* keeps marker positioned correctly */
 }
 
-.timeline .event .content:hover {
+.content:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   transform: translateY(-3px);
 }
 
-.timeline .event .content .header {
+.content .header {
   display: flex;
   justify-content: space-between; /* employer left, time right */
   font-family: concourse_4, Helvetica, sans-serif;
@@ -228,7 +234,7 @@ html { scroll-behavior: smooth; }
   text-align: right;
 }
 
-.timeline .event .content .text p {
+.content .text p {
   margin: 0;
   line-height: 1.4;
 }
@@ -261,13 +267,12 @@ html { scroll-behavior: smooth; }
 }
 
 .skills {
-  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
 .education {
   margin-top: 3rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .navbar-toggler.custom-toggler {
@@ -455,7 +460,6 @@ body.offcanvas-backdrop {
   margin-top: auto; /* Anchors skills at the bottom of the card if there's space */
 }
 
-/* Skill boxes styled like timeline labels/badges */
 .skill-badge {
   background: var(--color-link-hover);
   color: var(--color-background);
@@ -465,12 +469,21 @@ body.offcanvas-backdrop {
   border-radius: 8px;
   padding: 0.35em 0.8em;
   font-size: 1rem;
-  letter-spacing: 0.03em;
-  border: none;
-  margin-top: 2px;
-  margin-right: 3px;
-  vertical-align: middle;
+  margin: 0.15em 0.35em 0.15em 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.skill-group-title {
+  font-weight: bold;
+  font-family: concourse_4;
+  font-size: 1.10rem;
+  letter-spacing: 0.01em;
+}
+.skill-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 10px;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.06);
 }
 
 /* Responsive adjustments -- stack on mobile */
