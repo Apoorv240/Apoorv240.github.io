@@ -3,355 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apoorv Agrawal — Portfolio</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var toggler = document.querySelector('.navbar-toggler.custom-toggler');
-      var offcanvas = document.getElementById('mobileNav');
-      var offcanvasBS = bootstrap.Offcanvas.getOrCreateInstance(offcanvas);
-
-      // Ensure toggler aria-expanded updates with offcanvas events
-      offcanvas.addEventListener('show.bs.offcanvas', function () {
-        toggler.setAttribute('aria-expanded', 'true');
-      });
-      offcanvas.addEventListener('hide.bs.offcanvas', function () {
-        toggler.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-
-
-  <!-- Custom CSS -->
+  <title>Apoorv Agrawal — Embedded & Robotics</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand custom-brand" href="#">~apoorv240.github.io</a>
-    <button
-      class="navbar-toggler custom-toggler"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileNav"
-      aria-controls="mobileNav"
-      aria-label="Toggle navigation">
-      <span class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </button>
-  
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
-      <div class="offcanvas-header">
-        
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="site-title">
+        <a href="#hero">Apoorv Agrawal</a>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link slide-link" href="#about-experience">About</a></li>
-          <li class="nav-item"><a class="nav-link slide-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link slide-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <nav class="site-nav">
+        <a href="#projects">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about-experience">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Apoorv Agrawal</h1>
-      <p>Computer Engineering @ TAMU | <em>Robotics, Embedded, and Automation</em></p>
-      <div class="hero-buttons mt-3">
-        <a href="https://github.com/Apoorv240" target="_blank" class="hero-btn">
-            <i class="bi bi-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/apoorvagrawal240" target="_blank" class="hero-btn">
+  <!-- Hero + About integrated -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <!-- Left column: photo + vertical contact buttons -->
+      <div class="hero-photo-wrapper">
+        <div class="hero-photo">
+          <img src="photo.png" alt="Photo of Apoorv Agrawal">
+        </div>
+
+        <!-- Vertical contact buttons -->
+        <div class="hero-contact-buttons">
+          <a href="https://linkedin.com/in/apoorvagrawal240" target="_blank" class="hero-btn" title="LinkedIn">
             <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="docs/Apoorv_Agrawal_Resume.pdf" target="_blank" class="hero-btn">
+            <span class="btn-label">Linkedin</span>
+          </a>
+          <a href="https://github.com/Apoorv240" target="_blank" class="hero-btn" title="GitHub">
+            <i class="bi bi-github"></i>
+            <span class="btn-label">Github</span>
+          </a>
+          <a href="docs/Apoorv_Agrawal_Resume.pdf" target="_blank" class="hero-btn" title="Resume">
             <i class="bi bi-file-earmark-text"></i>
-        </a>
+            <span class="btn-label">Resume</span>
+          </a>
+        </div>
+        <div class="hero-contact-buttons">
+          <a href="mailto:apoorv.agrawal240@gmail.com" class="hero-btn" title="Email">
+            <i class="bi bi-envelope"></i>
+            <span class="btn-label">apoorv.agrawal240@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/apoorvagrawal240" target="_blank" class="hero-btn" title="LinkedIn">
+            <i class="bi bi-phone"></i>
+            <span class="btn-label">+1 (309) 706-6931</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right column: hero text -->
+      <div class="hero-text">
+        <h1>Apoorv Agrawal</h1>
+        <p class="hero-tagline">
+          Embedded &amp; robotics engineer building real-time systems for satellites and robots.
+        </p>
+
+        <h3 class="hero-section-header">Where I'm building:</h3>
+        <p class="hero-subline">
+          Computer Engineering '29 @ Texas A&amp;M University<br>
+          Command &amp; Data Handling Engineer @ AggieSat Lab<br>
+          Electronics Engineering Intern @ Aggies Create<br>
+          Undergraduate Researcher @ AGGIES Lab
+        </p>
+
+        <h3 class="hero-section-header">A bit about me:</h3>
+        <p class="about-text">
+          Howdy! I’m a computer engineering student at Texas A&amp;M who likes working on embedded systems,
+          robotics, and the software that ties them together. Most of my recent work has been on
+          satellite payload software at AggieSat Lab, a Measure‑While‑Drilling embedded system at
+          Aggies Create, cybersecurity automation research at AGGIES Lab, and motion planning and
+          autonomy for competition robots. I enjoy taking something that’s half working and poking
+          at it until it’s reliable enough that I don’t have to think about it anymore.
+        </p>
+
+        <a href="experience.html" class="hero-cta">View selected projects ↓</a>
+        <a href="#projects" class="hero-cta hero-cta-secondary">View full experience →</a>
       </div>
     </div>
-    <a href="#about-experience" class="scroll-down">
-        <i class="bi bi-chevron-down"></i>
-    </a>
   </section>
 
-    <!-- About & Experience -->
-    <section id="about-experience" class="py-5">
-    <div class="container">
-        <div class="row">
-        <!-- Left Column: About -->
-        <div class="col-lg-6">
-            <div>
-                <h2>About Me</h2>
-                <p>Hi! I'm <b>Apoorv</b>. I love building things that move. Whether it's in hardware or software, I enjoy figuring out how stuff works and bringing it to life. Experimenting, iterating, and seeing ideas take shape is what keeps me going.</p>
-            </div>
-            <!-- <p>Bachelor of Science in Computer Engineering — Texas A&M University (expected 2029)</p> -->
-            
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">C</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">LaTeX</span>
+            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Flask</span>
+            <span class="tech-badge">HTML/CSS/JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Embedded Systems</h3>
+          <div class="project-tech">
+            <span class="tech-badge">STM32</span>
+            <span class="tech-badge">ESP32</span>
+            <span class="tech-badge">real-time firmware</span>
+            <span class="tech-badge">DMA</span>
+            <span class="tech-badge">UART</span>
+            <span class="tech-badge">CAN</span>
+            <span class="tech-badge">I2C</span>
+            <span class="tech-badge">SPI</span>
+            <span class="tech-badge">Linux</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools</h3>
+          <div class="project-tech">
+            <span class="tech-badge">Git</span>
+            <span class="tech-badge">SEGGER Ozone</span>
+            <span class="tech-badge">Altium</span>
+            <span class="tech-badge">KiCad</span>
+            <span class="tech-badge">Fusion 360</span>
+            <span class="tech-badge">Visual Studio</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Control & Robotics</h3>
+          <div class="project-tech">
+            <span class="tech-badge">Sensor interfacing</span>
+            <span class="tech-badge">Motor control</span>
+            <span class="tech-badge">PID / feedforward control</span>
+            <span class="tech-badge">Path planning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="education">
-            <h2>Education</h2>
-                <div class="content">
-                    <div class="header">
-                        <span class="employer">Texas A&M University</span>
-                        <span class="time">May 2029 (Expected)</span>
-                    </div>
-                    <p>
-                      <b>B.S. Computer Engineering</b> <br>
-                      <b>GPA:</b> 3.8/4.0<br>
-                      <b>Orgs:</b> Texas Aimbots, Aggie Robotics, TAMU Cybersecurity Club, AGGIES Lab
-                    </p>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container section">
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/or_lighting_arm.jpg" alt="Automated OR Lighting Arm Demo">
+          </div>
+          <h3>Automated OR Lighting Arm</h3>
+          <div class="project-tech">
+            <span class="tech-badge">ESP32</span>
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Flask</span>
+          </div>
+          <p>
+            Built a robotic arm for TAMUHACK '26 for automatic surgical light positioning.
+          </p>
+          <a href="https://github.com/Apoorv240/lighting-arm" target="_blank" class="project-link">View Code →</a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/SoftwareRasterizer.png" alt="CPU-Based Software Shader Pipeline">
+          </div>
+          <h3>CPU-Based Software Shaders</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Multithreading</span>
+            <span class="tech-badge">SIMD</span>
+            <span class="tech-badge">Compilers</span>
+            <span class="tech-badge">GLSL</span>
+            <span class="tech-badge">Profiling</span>
+          </div>
+          <p>
+            Developing a GLSL-like programming language and 3d-rendering pipeline targeting the CPU.
+          </p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/DST.png" alt="Dynamic Survey Tool">
+          </div>
+          <h3>Dynamic Survey Tool</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Arduino</span>
+            <span class="tech-badge">STM32</span>
+            <span class="tech-badge">FreeRTOS</span>
+            <span class="tech-badge">Altium</span>
+            <span class="tech-badge">Filtering & State Estimation</span>
+          </div>
+          <p>
+            Designed a PCB and writing filtering algorithms for subsurface orientation sensing on drills.
+          </p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/fsdb.jpg" alt="FSDB">
+          </div>
+          <h3>FSDB</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C</span>
+            <span class="tech-badge">Linux</span>
+            <span class="tech-badge">Multithreading</span>
+          </div>
+          <p>
+            Developing a NoSQL key-value + time-series database for embedded Linux with built-in fault tolerance (A/B copies, checksums, redundancy) and a full concurrency model.
+          </p>
+          <a href="https://github.com/Apoorv240/cpu-shader-pipeline" target="_blank" class="project-link">View Code →</a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/motion_planner.png" alt="Dynamic Motion Planner">
+          </div>
+          <h3>Dynamic Motion Planner</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Path-planning algorithms</span>
+            <span class="tech-badge">GNUPlot</span>
+          </div>
+          <p>
+            Built a real-time autonomous path planner for sparse obstacle fields.
+          </p>
+          <a href="https://github.com/Apoorv240/cpu-shader-pipeline" target="_blank" class="project-link">View Code →</a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/RaspiChatbot.png" alt="RPI Chatbot" >
+          </div>
+          <h3>RPI Chatbot</h3>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Linux</span>
+            <span class="tech-badge">Breadboarding</span>
+            <span class="tech-badge">LLMs</span>
+          </div>
+          <p>
+            Built a voice-activated chatbot with Gemma-2B on a Raspberry Pi.
+          </p>
+          <a href="https://github.com/Apoorv240/cpu-shader-pipeline" target="_blank" class="project-link">View Code →</a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/Forza.png" alt="Forza Motorsport Telemetry Dashboard">
+          </div>
+          <h3>Forza Motorsport Telemetry Display</h3>
+          <div class="project-tech">
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">Avalonia</span>
+            <span class="tech-badge">UDP</span>
+          </div>
+          <p>
+            Built a desktop telemetry dashboard for Forza Motorsport for in-race monitoring and analysis over UDP.
+          </p>
+          <a href="https://github.com/Apoorv240/forza-telemetry" target="_blank" class="project-link">View Code →</a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-item">
+          <div class="project-image">
+            <img src="images/Numpad.png" alt="10-key Numpad">
+          </div>
+          <h3>10-Key Numpad</h3>
+          <div class="project-tech">
+            <span class="tech-badge">KiCad</span>
+            <span class="tech-badge">STM32</span>
+            <span class="tech-badge">USB-C</span>
+          </div>
+          <p>
+            Designed a 10-key numpad PCB in KiCad with an STM32 and USB-C.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Experience Section -->
+  <section id="experience">
+    <div class="container section">
+      <h2>Recent Experience</h2>
+      <div class="projects-grid"> <!-- reusing project grid style -->
+        <article class="experience-item">
+          <div class="experience-inner">
+            <header class="experience-header">
+              <div class="experience-title-block">
+                <h3>AggieSat Laboratory – Command &amp; Data Handling Engineer</h3>
               </div>
+              <div class="experience-date">Jan 2026 – Present</div>
+            </header>
+            <div class="project-tech">
+              <span class="tech-badge">C++</span>
+              <span class="tech-badge">Linux</span>
+              <span class="tech-badge">Systems engineering</span>
+              <span class="tech-badge">POSIX IPC</span>
             </div>
-        </div>
+            <p>
+              I'm developing inter-process communication software for satellite payloads at AggieSat Lab.
+              I design and implement POSIX IPC mechanisms like shared memory, ring buffers, and
+              mutex/semaphore synchronization to reliably move data between onboard processes and
+              support real-time operations.
+            </p>
+          </div>
+        </article>
 
-        <!-- Right Column: Experience Timeline -->
-        <div class="col-lg-6 pe-4">
-            <h2>Experience</h2>
-            <div class="timeline">
-            <div class="events">
-                <!-- Example Event -->
-                <div class="event">
-                <svg class="marker" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-                    <circle cx="6" cy="6" r="6"></circle>
-                </svg>
-                <div class="content">
-                    <div class="header">
-                        <span class="employer">Texas Aimbots</span>
-                        <span class="time">September 2025 - Present</span>
-                    </div>
-                    <p>Firmware Developer — Implemented sensor-driven feedback loops in C++ for real-time motion control, improving latency.</p>
-                </div>
-                </div>
-
-
-                <div class="event">
-                <svg class="marker" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-                    <circle cx="6" cy="6" r="6"></circle>
-                </svg>
-                <div class="content">
-                    <div class="header">
-                        <span class="employer">Aggie Robotics</span>
-                        <span class="time">August 2025 - Present</span>
-                    </div>
-                    <p>Software Developer — Implemented real-time Informed RRT* + B-Spline planner in C++ achieving sub-50ms trajectory generation.</p>
-                </div>
-                </div>
-
-                <div class="event">
-                <svg class="marker" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-                    <circle cx="6" cy="6" r="6"></circle>
-                </svg>
-                <div class="content">
-                    <div class="header">
-                        <span class="employer">Prosper ISD</span>
-                        <span class="time">June 2025 - July 2025</span>
-                    </div>
-                    <p>Coding Camp Team Lead — Taught Python and Scratch programming fundamentals to 40+ students ages 8–12.</p>
-                </div>
-                </div>
-
-                <!-- <div class="event">
-                <svg class="marker" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-                    <circle cx="6" cy="6" r="6"></circle>
-                </svg>
-                <div class="content">
-                    <div class="header">
-                        <span class="employer">Bloom Institute</span>
-                        <span class="time">May 2024 - August 2024</span>
-                    </div>
-                    <p>Scratch & Python instructor — Led interactive classes for 30 students, introducing fundamental coding concepts and building problem-solving skills.</p>
-                </div>
-                </div> -->
+        <article class="experience-item">
+          <div class="experience-inner">
+            <header class="experience-header">
+              <div class="experience-title-block">
+                <h3>Aggies Create – Electrical Engineering Intern (Dynamic Survey Tool)</h3>
+              </div>
+              <div class="experience-date">Sep 2025 – Present</div>
+            </header>
+            <div class="project-tech">
+              <span class="tech-badge">STM32</span>
+              <span class="tech-badge">C++</span>
+              <span class="tech-badge">Altium</span>
+              <span class="tech-badge">Sensor fusion</span>
+              <span class="tech-badge">EKF</span>
             </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-    </section>
-
-<section id="skills" class="py-3 py-md-5">
-  <div class="container">
-    <h2>Technical Skills</h2>
-    <div class="row gy-4">
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="skill-card p-3 h-100">
-          <div class="skill-group-title mb-2">Languages</div>
-          <div>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">C</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Java</span>
+            <p>
+              At Aggies Create, I'm working on a Measure-While-Drilling embedded system for sensing
+              orientation underground in tough, high-vibration environments. I handle PCB design and
+              validation, routing high-density STM32 and external Flash interfaces to meet signal
+              integrity requirements. I also maintain a hardware test fixture using Arduino, stepper
+              motors, and vibration motors. On the firmware side, I implement filtering and estimation
+              algorithms like low-pass filters and an Extended Kalman Filter on STM32 to get stable
+              pose estimates from noisy sensor data.
+            </p>
           </div>
-        </div>
+        </article>
       </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="skill-card p-3 h-100">
-          <div class="skill-group-title mb-2">Tools & IDEs</div>
-          <div>
-            <span class="skill-badge">KiCad</span>
-            <span class="skill-badge">Altium</span>
-            <span class="skill-badge">STM32CubeIDE</span>
-            <span class="skill-badge">SEGGER Ozone</span>
-            <span class="skill-badge">Git</span>
-            <span class="skill-badge">Fusion360</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="skill-card p-3 h-100">
-          <div class="skill-group-title mb-2">Embedded Systems</div>
-          <div>
-            <span class="skill-badge">STM32</span>
-            <span class="skill-badge">ARM Cortex-M</span>
-            <span class="skill-badge">DMA</span>
-            <span class="skill-badge">I2C</span>
-            <span class="skill-badge">UART</span>
-            <span class="skill-badge">CAN</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="skill-card p-3 h-100">
-          <div class="skill-group-title mb-2">Peripherals & Control</div>
-          <div>
-            <span class="skill-badge">Sensor interfacing</span>
-            <span class="skill-badge">Motor controllers</span>
-            <span class="skill-badge">PID</span>
-            <span class="skill-badge">Feedforward</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="mt-3 text-muted"><i class="bi bi-lightbulb"></i> Currently learning: STM32 RTOS, ROS2, advanced CAN protocols</p>
-  </div>
-</section>
-
-<section id="projects" class="py-5">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="row g-4 mt-3">
-      <div class="col-12 col-md-6 col-lg-4">
-        <a href="projects/starwarsradio">
-          <div class="project-card">
-            <div class="project-img placeholder-img mb-3"></div>
-            <h5 class="project-title mb-2">Dynamic Survey Tool</h5>
-            <p class="project-desc mb-3">PCB for robust subsurface orientation sensing with real-time sensor fusion algorithms.</p>
-            <div class="project-skills">
-              <span class="skill-badge">STM32</span>
-              <span class="skill-badge">C++</span>
-              <span class="skill-badge">Altium</span>
-              <span class="skill-badge">Fusion360</span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img placeholder-img mb-3"></div>
-          <h5 class="project-title mb-2">Dynamic Motion Planner</h5>
-          <p class="project-desc mb-3">Real-time Informed RRT* + B-Spline planner achieving sub-50 ms trajectory generation in dynamic
-2D environments</p>
-          <div class="project-skills">
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Git</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img placeholder-img mb-3"></div>
-          <h5 class="project-title mb-2">Starwars Radio</h5>
-          <p class="project-desc mb-3">Music player with switchable FM Radio/SD Card inputs.</p>
-          <div class="project-skills">
-            <span class="skill-badge">STM32</span>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">KiCad</span>
-            <span class="skill-badge">Fusion360</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img placeholder-img mb-3"></div>
-          <h5 class="project-title mb-2">Numpad Keyboard</h5>
-          <p class="project-desc mb-3">10-key numpad with rotary-encoder and customizable OLED screen.</p>
-          <div class="project-skills">
-            <span class="skill-badge">STM32</span>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">KiCad</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img placeholder-img mb-3"></div>
-          <h5 class="project-title mb-2">Raspi Chatbot</h5>
-          <p class="project-desc mb-3">Voice-interactive chatbot using Raspberry Pi, Python, and real-time speech synthesis.</p>
-          <div class="project-skills">
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Linux</span>
-            <span class="skill-badge">Breadboarding</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img placeholder-img mb-3"></div>
-          <h5 class="project-title mb-2">Forza Motorsport Telemetry Display</h5>
-          <p class="project-desc mb-3">Desktop dashboard app for Forza Motorsport 7 to display real-time car telemetry transmitted over UDP.</p>
-          <div class="project-skills">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">Avalonia</span>
-            <span class="skill-badge">Python</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2>Contact</h2>
-      <ul class="list-unstyled">
-        <li><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:apoorv.agrawal240@gmail.com">apoorv.agrawal240@gmail.com</a></li>
-      </ul>
+      <a href="experience.html" class="hero-cta" style="font-size: 1.2rem; display: block; text-align: right;">View Full Experience →</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div>&copy; 2025 Apoorv Agrawal. All rights reserved.</div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Apoorv Agrawal.</p>
+    </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
